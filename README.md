@@ -1,97 +1,81 @@
 # Müştəri saxlanması üzrə kohort analizi
 
-Bu layihədə müştərilər ilk alış etdikləri aya görə kohortlara bölünüb və sonrakı aylardakı alış aktivlikləri təhlil edilib. Məqsəd müştəri itkisinin əsas dövrlərini müəyyənləşdirmək, kohortlar arasındakı fərqləri müqayisə etmək və saxlanma göstəricisini yaxşılaşdırmaq üçün tədbirlər hazırlamaqdır.
+Bu layihədə 2010-cu ilin dekabrından 2011-ci ilin noyabrına qədər ilk alışını edən müştərilər aylıq kohortlara bölünüb. Hər kohortun sonrakı aylardakı alış aktivliyi izlənərək təkrar alış davranışı və müştəri saxlanması təhlil edilib.
 
 ## Analizin məqsədi
 
-- Aylıq müştəri saxlanma göstəricisini hesablamaq
-- Kohortların nəticələrini müqayisə etmək
-- Müştəri itkisinin ən yüksək olduğu dövrləri müəyyənləşdirmək
-- Nəticələrə əsaslanan saxlanma strategiyası hazırlamaq
+- İlk alışdan sonra müştərilərin aktivliyini izləmək
+- Kohortların aylıq saxlanma göstəricilərini müqayisə etmək
+- Təkrar alışın zəiflədiyi və artdığı dövrləri müəyyənləşdirmək
+- Müştəri saxlanmasını yaxşılaşdırmaq üçün tövsiyələr hazırlamaq
 
 ## Metodologiya
 
-Müştərilər ilk alış etdikləri aya görə qruplaşdırılıb və hər kohortun sonrakı aylardakı aktivliyi izlənib.
+Müştərilər ilk alış ayına görə qruplaşdırılıb. 0-cı ay kohortun yarandığı ayı, sonrakı sütunlar isə ilk alışdan sonra keçən ayların sayını göstərir.
 
-**Saxlanma faizi = Aktiv müştərilərin sayı / Kohortun ilkin müştəri sayı × 100**
+**Saxlanma faizi = Müvafiq ayda alış edən müştərilərin sayı / Kohortun ilkin müştəri sayı × 100**
 
 Analiz aşağıdakı mərhələlər üzrə aparılıb:
 
-1. Alış məlumatlarının təmizlənməsi və yoxlanılması
+1. Hər müştərinin ilk alış tarixinin müəyyənləşdirilməsi
 2. Müştərilərin ilk alış ayına görə kohortlara bölünməsi
-3. Aylıq saxlanma faizlərinin hesablanması
-4. Kohortların müqayisəsi və nəticələrin vizuallaşdırılması
+3. Alış tarixi ilə kohort tarixi arasındakı ay fərqinin hesablanması
+4. Hər kohort üzrə aylıq saxlanma faizinin hesablanması
+5. Nəticələrin istilik xəritəsində vizuallaşdırılması
+
+## Vizualizasiya
+
+![Müştəri saxlanması üzrə kohort istilik xəritəsi](./Cohort_Retention_Heatmap.png)
 
 ## Əsas nəticələr
 
 | Göstərici | Nəticə |
 | --- | ---: |
-| Birinci ay üzrə saxlanma | 81% |
-| Birinci ay üzrə müştəri itkisi | 19% |
-| Üçüncü ay üzrə saxlanma | 62% |
-| Altıncı ay üzrə saxlanma | 42% |
-| On ikinci ay üzrə saxlanma | 25% |
-| Müştərinin orta ömürboyu dəyəri (CLV) | 650 AZN |
-
-## Kohortların müqayisəsi
-
-| Kohort | On ikinci ay üzrə saxlanma | Nəticə |
-| --- | ---: | --- |
-| Oktyabr 2023 | 32% | Ən yüksək göstərici |
-| Yanvar 2023 | 20% | Ən aşağı göstərici |
-
-Kohortlar arasındakı 12 faiz bəndlik fərq müştəri keyfiyyəti, cəlbetmə kanalı və kampaniyaların təsirinin ayrıca araşdırılmalı olduğunu göstərir.
+| Təhlil edilən kohort sayı | 12 |
+| Birinci ay üzrə orta saxlanma | 24,09% |
+| Birinci ay üzrə ən yüksək nəticə | Dekabr 2010 - 38,19% |
+| Birinci ay üzrə ən aşağı nəticə | Noyabr 2011 - 13,40% |
+| On ikinci aya çatan kohortun nəticəsi | Dekabr 2010 - 27,43% |
+| 0-cı aydan sonrakı ən yüksək göstərici | Dekabr 2010, 11-ci ay - 50,00% |
 
 ## Analitik nəticələr
 
-### İlk ay kritik dövrdür
+- **İlk ayda kəskin azalma var:** Birinci ay üzrə saxlanma 13,40%-38,19% aralığındadır. Kohort faizlərinin sadə ortası 24,09%-dir. Bu, müştərilərin böyük hissəsinin alışdan sonrakı ayda təkrar alış etmədiyini göstərir.
 
-Müştərilərin 19%-i ilk aydan sonra aktivliyini dayandırıb. Bu nəticə ilkin müştəri təcrübəsinin və məhsulun dəyərinin ilk həftələrdə aydın göstərilməsinin vacibliyini vurğulayır.
+- **Dekabr 2010 kohortu daha sabitdir:** Bu kohort ikinci aydan onuncu aya qədər əsasən 33%-40% aralığında qalıb, 11-ci ayda 50%-ə yüksəlib və 12-ci ayı 27,43%-lə tamamlayıb.
 
-### Uzunmüddətli saxlanma zəifləyir
+- **Aktivlik yalnız azalan istiqamətdə dəyişmir:** Yanvar 2011 kohortu birinci aydakı 23,99%-dən onuncu ayda 36,82%-ə, iyun 2011 kohortu isə birinci aydakı 20,85%-dən beşinci ayda 33,62%-ə yüksəlib. Bu dəyişikliklər yenidən aktivləşmə və ya mövsümi alış davranışına işarə edə bilər.
 
-Saxlanma göstəricisi birinci ayda 81%, üçüncü ayda 62%, altıncı ayda 42%, on ikinci ayda isə 25% təşkil edir. Bu azalma müştəri münasibətlərinin davamlı saxlanılmasında boşluqlar olduğunu göstərir.
+- **Noyabr ayında ümumi artım görünür:** Fərqli kohortların 2011-ci ilin noyabrına uyğun gələn göstəriciləri əvvəlki aylardan əsasən yüksəkdir. Səbəbi dəqiqləşdirmək üçün həmin dövrün məhsul, satış və kampaniya məlumatları ayrıca yoxlanmalıdır.
 
-### Kohortlar arasında nəzərəçarpan fərq var
+- **Son ay üzrə nəticələr ehtiyatla şərh edilməlidir:** Əksər son diaqonal hüceyrələrin 8,36%-14,96% aralığında olması məlumat dəstindəki son ayın natamam ola biləcəyini göstərir. Bu dövr tam ay deyilsə, nəticələr ümumi saxlanma göstəricisi kimi qəbul edilməməlidir.
 
-Oktyabr 2023 kohortunun nəticəsi Yanvar 2023 kohortundan 12 faiz bəndi yüksəkdir. Fərqin səbəbini müəyyənləşdirmək üçün həmin dövrlərdəki kampaniyalar, cəlbetmə kanalları və müştəri profilləri müqayisə edilməlidir.
-
-### Yenidən aktivləşmə potensialı mövcuddur
-
-Bəzi dövrlərdə mövsümi kampaniyalardan sonra aktivlik artıb. Bu müşahidə uyğun vaxtda göndərilən fərdiləşdirilmiş təkliflərin passiv müştərilərin geri qaytarılmasına kömək edə biləcəyini göstərir.
+- **Yeni və köhnə kohortlar eyni müddət üzrə müqayisə edilə bilməz:** Yeni kohortların müşahidə müddəti daha qısadır. Buna görə uzunmüddətli müqayisə yalnız eyni kohort yaşı üzrə aparılmalıdır.
 
 ## Tövsiyələr
 
-- İlk ay üçün qarşılama və məhsulla tanışlıq prosesini təkmilləşdirmək
-- Aktivliyi azalan müştərilər üçün fərdiləşdirilmiş yenidən aktivləşdirmə kampaniyaları hazırlamaq
-- Ən yaxşı nəticə göstərən kohortun cəlbetmə kanallarını və müştəri profilini təhlil etmək
-- Təkrar alışları artırmaq üçün loyallıq mexanizmlərini sınaqdan keçirmək
-- Müştəri itkisi riskini erkən müəyyənləşdirmək üçün davranış göstəricilərini izləmək
+- İlk alışdan sonrakı 30 gün üçün fərdiləşdirilmiş kommunikasiya qurmaq
+- Birdəfəlik və təkrar alış edən müştəriləri ayrıca təhlil etmək
+- Dekabr 2010 kohortunun və noyabr ayındakı artımın səbəblərini araşdırmaq
+- Müştəriləri məhsul, ölkə və cəlbetmə kanalına görə əlavə seqmentlərə bölmək
+- Natamam son ayı analizdən çıxarmaq və ya vizualda ayrıca işarələmək
 
 ## İzlənəcək göstəricilər
 
 - Birinci, üçüncü, altıncı və on ikinci ay üzrə saxlanma faizi
-- Müştəri itkisi faizi
 - Təkrar alış faizi
 - Yenidən aktivləşmə faizi
-- Müştərinin ömürboyu dəyəri (CLV)
-
-## İstifadə olunan alətlər
-
-- **Excel** - məlumatların hazırlanması və ilkin hesablamalar
-- **SQL** - alış məlumatlarının çıxarılması və strukturlaşdırılması
-- **Python / pandas** - məlumatların yoxlanılması və təhlili
-- **Tableau** - kohort istilik xəritəsinin və interaktiv vizuallaşdırmanın hazırlanması
-
-> Bu layihə tədris və portfel məqsədilə hazırlanmış konseptual analizdir.
-
-## Cohort heatmap
-
-![Customer Retention Cohort Analysis](Cohort_Retention_Heatmap.png)
+- Kohort üzrə aktiv müştəri sayı
 
 ## Fayl
 
 [Tableau workbook-u yüklə](customer-retention-cohort-analysis.twbx)
+
+## İstifadə olunan alətlər
+
+- **Tableau** - kohortların yaradılması, saxlanma faizlərinin hesablanması və istilik xəritəsinin hazırlanması
+
+> Bu layihə tədris və portfel məqsədilə hazırlanmış konseptual analizdir.
 
 ## Bacarıqlar
 
